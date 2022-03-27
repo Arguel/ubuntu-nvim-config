@@ -1,16 +1,26 @@
 <p align="center"><img src="https://i.imgur.com/D89mABQ.png"></p>
 
-# Description
-
 My nvim config in ubuntu
+
+# Table of contents
+
+- [Requirements](#requirements)
+  - [Optional](#optional)
+  - [Necessary](#necessary)
+- [Configuration](#configuration)
+- [Used plugins and their function](#used-plugins-and-their-function)
+- [Keyboard shortcuts](#keyboard-shortcuts)
 
 ---
 
 # Requirements
 
-- Additional autocompletion/setup for python with the following modules (you need to have [Python](https://www.python.org/downloads/) installed): <br/>
+## Optional
 
-<pre>
+- Additional autocompletion/setup for python with the following modules
+  (you need to have [Python](https://www.python.org/downloads/) installed):
+
+```sh
 pip3 install pynvim
 pip3 install neovim
 
@@ -24,36 +34,60 @@ pip3 install git+git://github.com/psf/black
 pip3 install pyls-mypy
 pip3 install pyls-isort
 pip3 install pyls-black
-</pre>
+```
 
-**(necessary)**
+## Necessary
 
 - Have [vim](https://www.vim.org/) and [nvim](https://neovim.io/) installed
-- A plugin manager (I personally use [Vim-Plug](https://github.com/junegunn/vim-plug)), but you can safely use any other, for example [Vim-Vundle](https://github.com/VundleVim/Vundle.vim), and you would only have to change the lines to suit your plugin manager.
-For example using Vim-Vundle you would have to change the following:
-<pre>
+- A plugin manager (I personally use
+  [Vim-Plug](https://github.com/junegunn/vim-plug)), but you can safely use any
+  other, for example [Vim-Vundle](https://github.com/VundleVim/Vundle.vim), and
+  you would only have to change the lines to suit your plugin manager.
+  For example using Vim-Vundle you would have to change the following:
+
+```vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " And any other plugin you want to change
 Plugin 'tpope/vim-fugitive'
 call vundle#end()
-</pre>
-- Once you have a plugin manager you will have to install the plugins that are in ".vimrc", in case of using vim-plug, you only have to put this command in the console and you should install them
-  <code>:PlugInstall</code>
+```
+
+- Once you have a plugin manager you will have to install the plugins that are
+  in ".vimrc", in case of using vim-plug, you only have to put this command in
+  the console and you should install them `:PlugInstall`
 
 ---
 
 # Configuration
 
-You can configure everything to your liking, I leave it as it is more comfortable for me, below I will also describe most of the keyboard shortcuts (which are generally the defaults of the X plugin in particular)
+You can configure everything to your liking, I leave it as it is more
+comfortable for me, below I will also describe most of the
+[keyboard shortcuts](#keyboard-shortcuts) (which are generally the defaults of
+the X plugin in particular)
 
-- There is an option enabled in the configuration (.vimrc) that will autosave the view (this includes, for example, where you were positioned before closing the file, if you created folds, they will also be saved, etc.) <pre>" save the folds in the .vim/view directory
-  autocmd BufWinLeave _._ mkview
-  autocmd BufWinEnter _._ silent loadview</pre>
-  but it may generate lag and also it will execute with each new file and it will generate an error message if it is a new file (only the first time), it will also generate a folder called "view" in the nvim folder and in the vim folder <br> <br> <b>In windows</b>
-  <code>C:\Users\ttuna\AppData\Local\nvim-data\view</code>
+- There is an option enabled in the configuration (.vimrc) that will autosave
+  the view (this includes, for example, where you were positioned before
+  closing the file, if you created folds, they will also be saved, etc.)
+
+  ```vim
+  " save the folds in the .vim/view directory
+   autocmd BufWinLeave _._ mkview
+   autocmd BufWinEnter _._ silent loadview
+  ```
+
+  but it may generate lag and also it will execute with each new file and it
+  will generate an error message if it is a new file (only the first time), it
+  will also generate a folder called "view" in the nvim folder and in the vim
+  folder
+
+  **In windows**
+  `C:\Users\ttuna\AppData\Local\nvim-data\view`
   or
-  <code>C:\Users\ttuna\\.vim\view</code> <br> <br> That is why if it bothers you to have this enabled it is better that you delete it from the .vimrc
+  `C:\Users\ttuna\\.vim\view`
+
+  That is why if it bothers you to have this enabled it is better that you
+  delete it from the .vimrc
 
 ---
 
