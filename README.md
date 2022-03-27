@@ -9,7 +9,10 @@ My nvim config in ubuntu
   - [Necessary](#necessary)
 - [Configuration](#configuration)
 - [Used plugins and their function](#used-plugins-and-their-function)
+- [Plugins Requirements](#plugins-requirements)
 - [Keyboard shortcuts](#keyboard-shortcuts)
+- [Windows version](#windows-version) (old)
+- [Credits](#credits)
 
 ---
 
@@ -93,9 +96,11 @@ the X plugin in particular)
 
 # Used plugins and their function
 
-### Autocomplete
+## Autocomplete
 
-- [Conquer of Completion](https://github.com/neoclide/coc.nvim) for autocomplete <br> **_Coc extensions_**
+- [Conquer of Completion](https://github.com/neoclide/coc.nvim) for autocomplete
+
+  **Coc extensions**
 
   - [prettier](https://github.com/neoclide/coc-prettier) code format
   - [snippets](https://github.com/neoclide/coc-snippets) to show ultisnips snippets
@@ -103,38 +108,47 @@ the X plugin in particular)
   - [css](https://github.com/neoclide/coc-css) integration for css
   - [html](https://github.com/neoclide/coc-html) integration for html
   - [json](https://github.com/neoclide/coc-json) integration for json
-  - [tsserver](https://github.com/neoclide/coc-tsserver) integration for javascript & typescript
+  - [tsserver](https://github.com/neoclide/coc-tsserver) integration for
+    javascript & typescript
 
 - [ultisnips](https://github.com/SirVer/ultisnips) for snippets in Vim using CoC
   - [vim-snippets](https://github.com/honza/vim-snippets) pack of snippets
 
-### Appearance
+## Appearance
 
-- [monokai theme](https://github.com/crusoexia/vim-monokai) a simple theme for vim that I liked, nothing special
-- [vim-airline](https://github.com/vim-airline/vim-airline) to make the statusline more beautiful
-- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) themes for the plugin above
-- [vim-devicons](https://github.com/ryanoasis/vim-devicons) displays icons according to file type
+- [monokai theme](https://github.com/crusoexia/vim-monokai) a simple theme for
+  vim that I liked, nothing special
+- [vim-airline](https://github.com/vim-airline/vim-airline) to make the
+  statusline more beautiful
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) themes
+  for the plugin above
+- [vim-devicons](https://github.com/ryanoasis/vim-devicons) displays icons
+  according to file type
 
-### Navigation
+## Navigation
 
-- [nerdtree](https://github.com/preservim/nerdtree) file system explorer, to navigate between files in a more intuitive way
-  - [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) a plugin of NERDTree showing git status
-  - [vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight) adds syntax-highlight for nerdtree on most common file extensions
-- [ctrlp-vim](https://github.com/ctrlpvim/ctrlp.vim) to find and manipulate buffers more quickly
-- [vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator) buffergator is a plugin for listing, navigating between, and selecting buffers to edit. **_(this could be removed if you wish, ctrlp almost already does the same job)_**
-- [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) for navigate seamlessly between vim and tmux splits using a consistent set of hotkeys
+- [nerdtree](https://github.com/preservim/nerdtree) file system explorer, to
+  navigate between files in a more intuitive way
+  - [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) a
+    plugin of NERDTree showing git status
+  - [vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
+    adds syntax-highlight for nerdtree on most common file extensions
+- [ctrlp-vim](https://github.com/ctrlpvim/ctrlp.vim) to find and manipulate
+  buffers more quickly
+- [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) for
+  navigate seamlessly between vim and tmux splits using a consistent set of hotkeys
 
-### Mobility
+## Mobility
 
 - [vim-easymotion](https://github.com/easymotion/vim-easymotion) to move much faster while editing
 - [vim-smoothie](https://github.com/psliwka/vim-smoothie) for smooth scrolling
 
-### Git
+## Git
 
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter) shows which lines have been added, modified, or removed when using git
 - [vim-fugitive](https://github.com/tpope/vim-fugitive) to use git commands more quickly
 
-### Useful
+## Useful
 
 - [vim-closetag](https://github.com/alvan/vim-closetag) auto close (X)HTML tags
 - [auto-pairs](https://github.com/jiangmiao/auto-pairs) for insert or delete brackets, parens, quotes in pair.
@@ -149,40 +163,41 @@ the X plugin in particular)
 
 # Keyboard shortcuts
 
-My current mapleader is space, so **Leader === space**
-
-| Shortcut    | Mode   | Description           |
-| ----------- | ------ | --------------------- |
-| `<Leader>w` | Normal | save the current file |
+I moved the keyboard shortcuts section to a separate file, because it's a lot of
+information, you can find it in [keyboard-shortcuts](keyboard-shortcuts)
 
 ---
 
 # Special mentions
 
-- Using ultisnips and CoC when you complete a snippet you can use the 'tab' key to jump to the next field to complete
+- Using ultisnips and CoC when you complete a snippet you can use the 'tab' key
+  to jump to the next field to complete
 
-- <code>Shift + v</code> to enter block select mode, <code>zf</code> (to create a fold), <code>zo</code> (to open a fold), <code>zc</code> (to close a fold), <code>zd</code> (to delete a fold), `:Fold<CR>` (coc plugin) or <code>zm</code> (to fold all the text in the current buffer), <code>zr</code> to open all the folds. <br><br> <b>Tip: you can use the key combination <code>ggVG</code> to select all the text and use <code>zo</code> to open the folds or some other command</b> <br><br> <ins><b>Note:</b></ins> `z*` fold methods only work when the method is manual or marker
-  <code>:set foldmethod=manual</code> or <code>:set foldmethod=marker</code>
-
-- <code>:diffget</code> and <code>:diffput</code> can be abbreviated as `do` and `dp` respectively
+- `:diffget` and `:diffput` can be abbreviated as `do` and `dp` respectively
 
 ---
 
 # How to keep it updated?
 
-To obtain the latest features of our plugins and plugin managers, we will need to update them from time to time
+To obtain the latest features of our plugins and plugin managers, we will need
+to update them from time to time
 
-In order to update the plugin manager that I use (in this case it would be "Plug") we will need to put this command in the console and execute it
+In order to update the plugin manager that I use (in this case it would be
+"Plug") we will need to put this command in the console and execute it
 
-<code>:PlugUpgrade</code>
-(each plugin manager may have a different way to update it)
+`:PlugUpgrade`
 
-Once an update is applied, I always recommend restarting nvim so that it does not throw errors if we continue to update something else.
-To update the plugins we are using (for example, coc, fugitive, ctrlp, nerdtree, etc) we will have to use this other command
+_(each plugin manager may have a different way to update it)_
+
+Once an update is applied, I always recommend restarting nvim so that it does
+not throw errors if we continue to update something else.
+To update the plugins we are using (for example, coc, fugitive, ctrlp, nerdtree,
+etc) we will have to use this other command
 
 <code>:PlugUpdate</code>
 
-And finally to update the CoC extensions we are going to use the following command (as I mentioned above it is better to restart before executing it)
+And finally to update the CoC extensions we are going to use the following
+command (as I mentioned above it is better to restart before executing it)
 
 <code>:CocUpdate</code>
 
@@ -190,8 +205,9 @@ And finally to update the CoC extensions we are going to use the following comma
 
 # Credits
 
-### References that I used to create a hybrid of configs
+## References that I used to create a hybrid of configs
 
-- [jdhao](https://github.com/jdhao/nvim-config) I personally think that I will migrate to this configuration in the future
+- [jdhao](https://github.com/jdhao/nvim-config)
 - [benawad](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f)
 - [joshldavis](https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/#:~:text=Summary%3A%20A%20buffer%20is%20the,just%20a%20collection%20of%20windows.)
+- [ThePrimeagen](https://github.com/ThePrimeagen)
