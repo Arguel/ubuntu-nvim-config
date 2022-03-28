@@ -14,9 +14,7 @@ information already comes from my [old configuration in windows](https://github.
 6. [Windows version](#windows-version) (old)
 7. [Credits](#credits)
 
----
-
-# Requirements
+# ⚡️ Requirements
 
 ## Optional
 
@@ -60,9 +58,7 @@ call vundle#end()
   in ".vimrc", in case of using vim-plug, you only have to put this command in
   the console and you should install them `:PlugInstall`
 
----
-
-# Configuration
+# ⚙️ Configuration
 
 You can configure everything to your liking, I leave it as it is more
 comfortable for me, below I will also describe most of the
@@ -92,9 +88,7 @@ the X plugin in particular)
   That is why if it bothers you to have this enabled it is better that you
   delete it from the .vimrc
 
----
-
-# Used plugins and their function
+# 📚 Used plugins and their function
 
 ## Autocomplete
 
@@ -159,9 +153,7 @@ the X plugin in particular)
 - [nerdcommenter](https://github.com/preservim/nerdcommenter) for commenting operations and styles
 - [vim-titlecase](https://github.com/christoomey/vim-titlecase) support for motions and text objects
 
----
-
-# Plugins requirements
+# 📘 Plugins requirements
 
 ## coc.nvim
 
@@ -171,33 +163,25 @@ Follow the instructions in the [official repository](https://github.com/neoclide
 
 Follow the instructions in the [official repository](https://github.com/simnalamburt/vim-mundo#requirements)
 
----
-
-# Keyboard shortcuts
+# 🚀 Keyboard shortcuts
 
 I moved the keyboard shortcuts section to a separate file, because it's a lot of
 information, you can find it in [keyboard-shortcuts](keyboard-shortcuts.md)
 
----
-
-# Windows version
+# 🖥️ Windows version
 
 The windows version is the old version of this configuration and [this is its
 repository](https://github.com/Arguel/windows-nvim-config), it keeps most of the
 keyboard shortcuts, so you can use that configuration without any problem
 
----
-
-# Special mentions
+# ⭐ Special mentions
 
 - Using ultisnips and CoC when you complete a snippet you can use the 'tab' key
   to jump to the next field to complete
 
 - `:diffget` and `:diffput` can be abbreviated as `do` and `dp` respectively
 
----
-
-# How to keep it updated?
+# 🔥 How to keep it updated?
 
 To obtain the latest features of our plugins and plugin managers, we will need
 to update them from time to time
@@ -220,9 +204,7 @@ command (as I mentioned above it is better to restart before executing it)
 
 `:CocUpdate`
 
----
-
-# Credits
+# 🧾 Credits
 
 ## References that I used to create a hybrid of configs
 
