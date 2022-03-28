@@ -45,14 +45,13 @@ pip3 install pyls-black
   other, for example [Vim-Vundle](https://github.com/VundleVim/Vundle.vim), and
   you would only have to change the lines to suit your plugin manager.
   For example using Vim-Vundle you would have to change the following:
-
-```vim
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" And any other plugin you want to change
-Plugin 'tpope/vim-fugitive'
-call vundle#end()
-```
+  ```vim
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  " And any other plugin you want to change
+  Plugin 'tpope/vim-fugitive'
+  call vundle#end()
+  ```
 
 - Once you have a plugin manager you will have to install the plugins that are
   in ".vimrc", in case of using vim-plug, you only have to put this command in
