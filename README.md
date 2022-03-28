@@ -1,18 +1,18 @@
 <p align="center"><img src="https://i.imgur.com/D89mABQ.png"></p>
 
-My nvim config in ubuntu
+This is my configuration for nvim in the ubuntu environment, much of the
+information already comes from my [old configuration in windows](https://github.com/Arguel/windows-nvim-config)
+, in this new version several new plugins are added and the migration to lua begins
 
 # Table of contents
 
-- [Requirements](#requirements)
-  - [Optional](#optional)
-  - [Necessary](#necessary)
-- [Configuration](#configuration)
-- [Used plugins and their function](#used-plugins-and-their-function)
-- [Plugins Requirements](#plugins-requirements)
-- [Keyboard shortcuts](#keyboard-shortcuts)
-- [Windows version](#windows-version) (old)
-- [Credits](#credits)
+1. [Requirements](#requirements)
+2. [Configuration](#configuration)
+3. [Used plugins and their function](#used-plugins-and-their-function)
+4. [Plugins Requirements](#plugins-requirements)
+5. [Keyboard shortcuts](#keyboard-shortcuts)
+6. [Windows version](#windows-version) (old)
+7. [Credits](#credits)
 
 ---
 
@@ -161,10 +161,30 @@ the X plugin in particular)
 
 ---
 
+# Plugins requirements
+
+## coc.nvim
+
+Follow the instructions in the [official repository](https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim)
+
+## vim-mundo
+
+Follow the instructions in the [official repository](https://github.com/simnalamburt/vim-mundo#requirements)
+
+---
+
 # Keyboard shortcuts
 
 I moved the keyboard shortcuts section to a separate file, because it's a lot of
-information, you can find it in [keyboard-shortcuts](keyboard-shortcuts)
+information, you can find it in [keyboard-shortcuts](keyboard-shortcuts.md)
+
+---
+
+# Windows version
+
+The windows version is the old version of this configuration and [this is its
+repository](https://github.com/Arguel/windows-nvim-config), it keeps most of the
+keyboard shortcuts, so you can use that configuration without any problem
 
 ---
 
@@ -186,7 +206,6 @@ In order to update the plugin manager that I use (in this case it would be
 "Plug") we will need to put this command in the console and execute it
 
 `:PlugUpgrade`
-
 _(each plugin manager may have a different way to update it)_
 
 Once an update is applied, I always recommend restarting nvim so that it does
@@ -194,12 +213,12 @@ not throw errors if we continue to update something else.
 To update the plugins we are using (for example, coc, fugitive, ctrlp, nerdtree,
 etc) we will have to use this other command
 
-<code>:PlugUpdate</code>
+`:PlugUpdate`
 
 And finally to update the CoC extensions we are going to use the following
 command (as I mentioned above it is better to restart before executing it)
 
-<code>:CocUpdate</code>
+`:CocUpdate`
 
 ---
 

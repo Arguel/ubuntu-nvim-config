@@ -1,3 +1,5 @@
+# Keyboard shortcuts
+
 My current mapleader is space, so **Leader === space**
 
 | Shortcut    | Mode   | Description           |
