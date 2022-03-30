@@ -12,7 +12,9 @@ information already comes from my [old configuration in windows](https://github.
 4. [Plugins Requirements](#plugins-requirements)
 5. [Keyboard shortcuts](#keyboard-shortcuts)
 6. [Windows version](#windows-version) (old)
-7. [Credits](#credits)
+7. [Special mentions](#special-mentions)
+8. [How to keep it updated?](#how-to-keep-it-updated?)
+9. [Credits](#credits)
 
 # ⚡️ Requirements
 
@@ -45,6 +47,7 @@ pip3 install pyls-black
   other, for example [Vim-Vundle](https://github.com/VundleVim/Vundle.vim), and
   you would only have to change the lines to suit your plugin manager.
   For example using Vim-Vundle you would have to change the following:
+
   ```vim
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
@@ -156,16 +159,226 @@ the X plugin in particular)
 
 ## coc.nvim
 
-Follow the instructions in the [official repository](https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim)
+[https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim](https://github.com/neoclide/coc.nvim/wiki/Install-coc.nvim)
 
 ## vim-mundo
 
-Follow the instructions in the [official repository](https://github.com/simnalamburt/vim-mundo#requirements)
+### Requirements
+
+- Vim ≥ _7.3_ with `+python3` or `+python` options
+- [Neovim](https://neovim.io/) with [pynvim](https://github.com/neovim/pynvim) installed
+- Python ≥ _2.4_
+
+#### More information
+
+[https://github.com/simnalamburt/vim-mundo#requirements](https://github.com/simnalamburt/vim-mundo#requirements)
+
+## firenvim
+
+### Installing
+
+1. Check if the luabitop package is available by running `:lua bit.band(1,1)` in Neovim. If this throws an error, you will need to install it.
+
+2. Finally, install the Firenvim addon for your browser from [Mozilla's store](https://addons.mozilla.org/en-US/firefox/addon/firenvim/) or [Google's](https://chrome.google.com/webstore/detail/firenvim/egpjdkipkomnmjhjmdamaniclmdlobbo).
+
+#### More information
+
+[https://github.com/glacambre/firenvim#installing](https://github.com/glacambre/firenvim#installing)
+
+## nvim-web-devicons
+
+- [A patched font](https://www.nerdfonts.com/)
+
+#### More information
+
+[https://github.com/kyazdani42/nvim-web-devicons#requirements](https://github.com/kyazdani42/nvim-web-devicons#requirements)
+
+## telescope.nvim
+
+### Required dependencies
+
+- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) is required for
+  `live_grep` and `grep_string`
+- [telescope-fzy-native.nvim](https://github.com/nvim-telescope/telescope-fzy-native.nvim)
+  telescope sorter to significantly improve
+  sorting performance
+- [sharkdp/fd](https://github.com/sharkdp/fd) (finder)
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+  (finder/preview)
+- [neovim LSP](https://neovim.io/doc/user/lsp.html) (picker)
+- [devicons](https://github.com/kyazdani42/nvim-web-devicons) (icons)
+
+#### More information
+
+[https://github.com/nvim-telescope/telescope.nvim#getting-started](https://github.com/nvim-telescope/telescope.nvim#getting-started)
+
+## nvim-treesitter
+
+## Requirements
+
+- Neovim latest stable version or [nightly](https://github.com/neovim/neovim#install-from-source)
+- `tar` and `curl` in your path (or alternatively `git`)
+- A C compiler in your path and libstdc++ installed ([Windows users please read this!](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)).
+
+#### More information
+
+[https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
+## cpsm
+
+### Requirements
+
+- Vim 7.4, compiled with the `+python` flag.
+
+- A C++ compiler supporting C++11.
+
+- Boost (Ubuntu: package `libboost-all-dev`).
+
+- CMake (Ubuntu: package `cmake`).
+
+- Python headers (Ubuntu: package `python-dev`).
+
+- Optional, required for Unicode support: ICU (Ubuntu: package `libicu-dev`).
+
+Pyenv users on Mac OS X: cpsm requires dynamic Python libraries, which pyenv
+does not build by default. If CMake indicates that it's using static libraries,
+e.g.:
+
+```
+-- Found PythonLibs: /Users/<username>/.pyenv/versions/3.5.2/lib/python3.5/config-3.5m/libpython3.5m.a
+```
+
+Rebuild with dynamic library support by running `env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install <version>`.
+
+### Python 3 Support
+
+If your Vim is compiled against Python 3 instead (`+python3` flag) the install
+script should detect this in most cases and everything should just work. You may
+need different python headers installed (e.g. `python3-dev` on Ubuntu).
+
+If the detection does not work for any reason you can set `PY3=ON` or `PY3=OFF`
+as appropriate when running `./install.sh` to override it.
+
+#### More information
+
+[https://github.com/nixprime/cpsm#requirements](https://github.com/nixprime/cpsm#requirements)
+
+## fd
+
+### On Ubuntu
+
+_... and other Debian-based Linux distributions._
+
+If you run Ubuntu 19.04 (Disco Dingo) or newer, you can install the
+[officially maintained package](https://packages.ubuntu.com/fd-find):
+
+```
+sudo apt install fd-find
+```
+
+Note that the binary is called `fdfind` as the binary name `fd` is already used by another package.
+It is recommended that after installation, you add a link to `fd` by executing command
+`ln -s $(which fdfind) ~/.local/bin/fd`, in order to use `fd` in the same way as in this documentation.
+Make sure that `$HOME/.local/bin` is in your `$PATH`.
+
+If you use an older version of Ubuntu, you can download the latest `.deb` package from the
+[release page](https://github.com/sharkdp/fd/releases) and install it via:
+
+```bash
+sudo dpkg -i fd_8.3.2_amd64.deb  # adapt version number and architecture
+```
+
+#### More information
+
+[https://github.com/sharkdp/fd#on-ubuntu](https://github.com/sharkdp/fd#on-ubuntu)
+
+## wilder.nvim
+
+### Advanced config (for Neovim only or Vim with `yarp`)
+
+- Requires `fd` from [sharkdp/fd](https://github.com/sharkdp/fd) (see `:h wilder#python_file_finder_pipeline()` on using other commands)
+- Requires `cpsm` from [nixprime/cpsm](https://github.com/nixprime/cpsm)
+- Requires `fzy-lua-native` from [romgrk/fzy-lua-native](https://github.com/romgrk/fzy-lua-native)
+- Requires `nvim-web-devicons` from [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) or
+  `vim-devicons` from [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons) or
+  `nerdfont.vim` from [lambdalisue/nerdfont.vim](https://github.com/lambdalisue/nerdfont.vim)
+
+#### More information
+
+[https://github.com/gelguy/wilder.nvim#advanced-config-for-neovim-only-or-vim-with-yarp](https://github.com/gelguy/wilder.nvim#advanced-config-for-neovim-only-or-vim-with-yarp)
+
+## nvim-bqf
+
+### Requirements
+
+- [Neovim](https://github.com/neovim/neovim) 0.5 or later
+- [fzf](https://github.com/junegunn/fzf) (optional, 0.24.0 later)
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (optional)
+
+#### More information
+
+[https://github.com/kevinhwang91/nvim-bqf#requirements](https://github.com/kevinhwang91/nvim-bqf#requirements)
+
+## vista.vim
+
+### Requirement
+
+I don't know the mimimal supported version. But if you only care about the ctags
+related feature, vim 7.4.1154+ should be enough. If you want to ctags to run
+asynchonously, Vim 8.0.27+ should be enough.
+
+Otherwise, if you want to try any LSP related features, then you certainly need
+some plugins to retrive the LSP symbols, e.g.,
+[coc.nvim](https://github.com/neoclide/coc.nvim). When you have these LSP
+plugins set up, vista.vim should be ok to go as well.
+
+In addition, if you want to search the symbols via
+[fzf](https://github.com/junegunn/fzf), you will have to install it first. Note
+that fzf 0.22.0 or above is required.
+
+### Installation with package management
+
+#### Vim 8
+
+```bash
+$ mkdir -p ~/.vim/pack/git-plugins/start
+$ git clone https://github.com/liuchengxu/vista.vim.git --depth=1 ~/.vim/pack/git-plugins/start/vista.vim
+```
+
+#### NeoVim
+
+```bash
+$ mkdir -p ~/.local/share/nvim/site/pack/git-plugins/start
+$ git clone https://github.com/liuchengxu/vista.vim.git --depth=1 ~/.local/share/nvim/site/pack/git-plugins/start/vista.vim
+```
+
+#### More information
+
+[https://github.com/liuchengxu/vista.vim#requirement](https://github.com/liuchengxu/vista.vim#requirement)
+
+## copilot.vim
+
+1.  Install [Node.js][] 12 or newer.
+2.  Install [Neovim][] 0.6 or newer.
+3.  Install `github/copilot.vim` using vim-plug, packer.nvim, or any other
+    plugin manager. Or to install directly:
+
+        git clone https://github.com/github/copilot.vim.git \
+         ~/.config/nvim/pack/github/start/copilot.vim
+
+4.  Start Neovim and invoke `:Copilot setup`.
+
+[node.js]: https://nodejs.org/en/download/
+[neovim]: https://github.com/neovim/neovim/releases/latest
+
+#### More information
+
+[https://github.com/github/copilot.vim#getting-started](https://github.com/github/copilot.vim#getting-started)
 
 # 🚀 Keyboard shortcuts
 
 I moved the keyboard shortcuts section to a separate file, because it's a lot of
-information, you can find it in [keyboard-shortcuts](keyboard-shortcuts.md)
+information, you can find it in [keyboard-shortcuts](https://github.com/Arguel/ubuntu-nvim-config/blob/main/keyboard-shortcuts.md)
 
 # 🖥️ Windows version
 
