@@ -6,15 +6,15 @@ information already comes from my [old configuration in windows](https://github.
 
 # Table of contents
 
-1. [Requirements](#requirements)
-2. [Configuration](#configuration)
-3. [Used plugins and their function](#used-plugins-and-their-function)
-4. [Plugins Requirements](#plugins-requirements)
-5. [Keyboard shortcuts](#keyboard-shortcuts)
-6. [Windows version](#windows-version) (old)
-7. [Special mentions](#special-mentions)
-8. [How to keep it updated](#how-to-keep-it-updated)
-9. [Credits](#credits)
+1. [Requirements](#⚡️-requirements)
+2. [Configuration](#⚙️-configuration)
+3. [Used plugins and their function](#📚-used-plugins-and-their-function)
+4. [Plugins Requirements](#📘-plugins-requirements)
+5. [Keyboard shortcuts](#🚀-keyboard-shortcuts)
+6. [Windows version](#🖥️-windows-version) (old)
+7. [Special mentions](#⭐-special-mentions)
+8. [How to keep it updated](#🔥-how-to-keep-it-updated)
+9. [Credits](#🧾-credits)
 
 # ⚡️ Requirements
 
@@ -163,8 +163,6 @@ the X plugin in particular)
 
 ## vim-mundo
 
-### Requirements
-
 - Vim ≥ _7.3_ with `+python3` or `+python` options
 - [Neovim](https://neovim.io/) with [pynvim](https://github.com/neovim/pynvim) installed
 - Python ≥ _2.4_
@@ -214,8 +212,6 @@ the X plugin in particular)
 
 ## nvim-treesitter
 
-## Requirements
-
 - Neovim latest stable version or [nightly](https://github.com/neovim/neovim#install-from-source)
 - `tar` and `curl` in your path (or alternatively `git`)
 - A C compiler in your path and libstdc++ installed ([Windows users please read this!](https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)).
@@ -225,8 +221,6 @@ the X plugin in particular)
 [https://github.com/nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ## cpsm
-
-### Requirements
 
 - Vim 7.4, compiled with the `+python` flag.
 
@@ -309,8 +303,6 @@ sudo dpkg -i fd_8.3.2_amd64.deb  # adapt version number and architecture
 
 ## nvim-bqf
 
-### Requirements
-
 - [Neovim](https://github.com/neovim/neovim) 0.5 or later
 - [fzf](https://github.com/junegunn/fzf) (optional, 0.24.0 later)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) (optional)
@@ -320,8 +312,6 @@ sudo dpkg -i fd_8.3.2_amd64.deb  # adapt version number and architecture
 [https://github.com/kevinhwang91/nvim-bqf#requirements](https://github.com/kevinhwang91/nvim-bqf#requirements)
 
 ## vista.vim
-
-### Requirement
 
 I don't know the mimimal supported version. But if you only care about the ctags
 related feature, vim 7.4.1154+ should be enough. If you want to ctags to run
