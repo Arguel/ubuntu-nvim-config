@@ -13,7 +13,7 @@ information already comes from my [old configuration in windows](https://github.
 5. [Keyboard shortcuts](#keyboard-shortcuts)
 6. [Windows version](#windows-version) (old)
 7. [Special mentions](#special-mentions)
-8. [How to keep it updated?](#how-to-keep-it-updated?)
+8. [How to keep it updated](#how-to-keep-it-updated)
 9. [Credits](#credits)
 
 # ⚡️ Requirements
