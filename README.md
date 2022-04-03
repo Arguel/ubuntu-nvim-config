@@ -95,54 +95,74 @@ the X plugin in particular)
 ## Autocomplete
 
 - [Conquer of Completion](https://github.com/neoclide/coc.nvim) for autocomplete
-
 - [ultisnips](https://github.com/SirVer/ultisnips) for snippets in Vim using CoC
   - [vim-snippets](https://github.com/honza/vim-snippets) pack of snippets
+- [jedi](https://github.com/davidhalter/jedi-vim) jedi autocompletion library
+  for VIM
+- [delimitMate](https://github.com/Raimondi/delimitMate) vim plugin, provides
+  insert mode auo-completion for quotes, parens, brackets, etc
 
 ## Appearance
 
-- [monokai theme](https://github.com/crusoexia/vim-monokai) a simple theme for
-  vim that I liked, nothing special
-- [vim-airline](https://github.com/vim-airline/vim-airline) to make the
-  statusline more beautiful
-- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) themes
-  for the plugin above
-- [vim-devicons](https://github.com/ryanoasis/vim-devicons) displays icons
+- [tokyonight theme](https://github.com/folke/tokyonight.nvim) a simple theme for
+  nvim that I liked, nothing special
+- [lualine](https://github.com/nvim-lualine/lualine.nvim) to make the
+  statusline and tabline more beautiful
+- [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) displays icons
   according to file type
+- [indentLine](https://github.com/Yggdroot/indentLine) a vim plugin to display the indention levels with thin vertical lines
 
 ## Navigation
 
-- [nerdtree](https://github.com/preservim/nerdtree) file system explorer, to
+- [nvim-tree](https://github.com/kyazdani42/nvim-tree.lua) file system explorer,
+  to
   navigate between files in a more intuitive way
-  - [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) a
-    plugin of NERDTree showing git status
-  - [vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
-    adds syntax-highlight for nerdtree on most common file extensions
-- [ctrlp-vim](https://github.com/ctrlpvim/ctrlp.vim) to find and manipulate
-  buffers more quickly
 - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) for
   navigate seamlessly between vim and tmux splits using a consistent set of hotkeys
+- [vim-mundo](https://github.com/simnalamburt/vim-mundo) undo tree visualizer
+- [vim-markdown](https://github.com/preservim/vim-markdown) markdown vim mode
+  - [tabular](https://github.com/godlygeek/tabular) required by vim-markdown
+- [markdown-preview](https://github.com/iamcco/markdown-preview.nvim) markdown
+  preview plugin for (neo)vim
 
 ## Mobility
 
-- [vim-easymotion](https://github.com/easymotion/vim-easymotion) to move much faster while editing
-- [vim-smoothie](https://github.com/psliwka/vim-smoothie) for smooth scrolling
+- [hop](https://github.com/phaazon/hop.nvim) to move much faster while editing
+- [neoscroll](https://github.com/karb94/neoscroll.nvim) for smooth scrolling
 
 ## Git
 
-- [vim-gitgutter](https://github.com/airblade/vim-gitgutter) shows which lines have been added, modified, or removed when using git
-- [vim-fugitive](https://github.com/tpope/vim-fugitive) to use git commands more quickly
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter) shows which lines
+  have been added, modified, or removed when using git
+- [vim-fugitive](https://github.com/tpope/vim-fugitive) to use git commands
+  more quickly
+
+## Browsers
+
+- [firenvim](https://github.com/glacambre/firenvim) embed neovim in chrome,
+  firefox, thunderbird & others.
 
 ## Useful
 
-- [vim-closetag](https://github.com/alvan/vim-closetag) auto close (X)HTML tags
-- [auto-pairs](https://github.com/jiangmiao/auto-pairs) for insert or delete brackets, parens, quotes in pair.
-- [vim-sandwich](https://github.com/machakann/vim-sandwich) set of operator and textobject plugins to search/select/edit sandwiched textobjects
-- [emmet-vim](https://github.com/mattn/emmet-vim) emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to [emmet](https://emmet.io/)
-- [winresizer](https://github.com/simeji/winresizer) very simple vim plugin for easy resizing of your vim windows
-- [vim-polyglot](https://github.com/sheerun/vim-polyglot) something like [prettier](https://github.com/prettier/prettier) but for many more languages and vim
-- [nerdcommenter](https://github.com/preservim/nerdcommenter) for commenting operations and styles
-- [vim-titlecase](https://github.com/christoomey/vim-titlecase) support for motions and text objects
+- [vim-sandwich](https://github.com/machakann/vim-sandwich) set of operator and
+  textobject plugins to search/select/edit sandwiched textobjects
+- [emmet-vim](https://github.com/mattn/emmet-vim) emmet-vim is a vim plug-in
+  which provides support for expanding abbreviations similar to [emmet](https://emmet.io/)
+- [winresizer](https://github.com/simeji/winresizer) very simple vim plugin for
+  easy resizing of your vim windows
+- [vim-polyglot](https://github.com/sheerun/vim-polyglot) something like
+  [prettier](https://github.com/prettier/prettier) but for many more languages
+  and vim
+- [vim-commentary](https://github.com/tpope/vim-commentary) for commenting
+  operations and styles
+- [asyncrun](https://github.com/skywind3000/asyncrun.vim) for running async
+  shell commands
+- [better-escape](https://github.com/jdhao/better-escape.vim) a vim/neovim
+  plugin for escaping insert mode without lagging
+- []()
+- []()
+- []()
+- []()
 
 # 📘 Plugins requirements
 
@@ -216,11 +236,12 @@ Pyenv users on Mac OS X: cpsm requires dynamic Python libraries, which pyenv
 does not build by default. If CMake indicates that it's using static libraries,
 e.g.:
 
-```
+```bash
 -- Found PythonLibs: /Users/<username>/.pyenv/versions/3.5.2/lib/python3.5/config-3.5m/libpython3.5m.a
 ```
 
-Rebuild with dynamic library support by running `env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install <version>`.
+Rebuild with dynamic library support by running
+`env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install <version>`.
 
 **Python 3 Support**: If your Vim is compiled against Python 3 instead
 (`+python3` flag) the install script should detect this in most cases and
