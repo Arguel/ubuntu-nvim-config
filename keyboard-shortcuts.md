@@ -50,7 +50,7 @@ My current mapleader is space, so **Leader === space**
 | `err`              | normal | review errors flagged by coc         |
 | `<Leader>coc`      | Normal | enter the coc marketplace            |
 
-### asd
+### Hop
 
 | Shortcut | Mode   | Description |
 | -------- | ------ | ----------- |
