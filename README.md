@@ -1,7 +1,7 @@
 <p align="center"><img src="https://i.imgur.com/D89mABQ.png"></p>
 
 This is my configuration for nvim in the ubuntu environment, much of the
-information already comes from my [old configuration in windows](https://github.com/Arguel/windows-nvim-config)
+information already comes from my [old configuration in windows](https://github.com/enzoarguello512/windows-nvim-config)
 , in this new version several new plugins are added and the migration to lua begins
 
 # Table of contents
@@ -356,12 +356,12 @@ $ git clone https://github.com/liuchengxu/vista.vim.git --depth=1 ~/.local/share
 # 🚀 Keyboard shortcuts
 
 I moved the keyboard shortcuts section to a separate file, because it's a lot of
-information, you can find it in [keyboard-shortcuts](https://github.com/Arguel/ubuntu-nvim-config/blob/main/keyboard-shortcuts.md)
+information, you can find it in [keyboard-shortcuts](https://github.com/enzoarguello512/ubuntu-nvim-config/blob/main/keyboard-shortcuts.md)
 
 # 🖥️ Windows version
 
 The windows version is the old version of this configuration and [this is its
-repository](https://github.com/Arguel/windows-nvim-config), it keeps most of the
+repository](https://github.com/enzoarguello512/windows-nvim-config), it keeps most of the
 keyboard shortcuts, so you can use that configuration without any problem
 
 # ⭐ Special mentions
