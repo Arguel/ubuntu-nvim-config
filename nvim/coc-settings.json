@@ -1,0 +1,48 @@
+{
+  "suggest.noselect": false,
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "html-css-support.styleSheets": [
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css",
+    "/style.css",
+    "style.css",
+    "/assets/css/main.css",
+    "/main.css",
+    "main.css"
+  ],
+  "html-css-support.enabledLanguages": [
+    "html",
+    "vue",
+    "angular",
+    "blade",
+    "htmldjango",
+    "xhtml",
+    "jsx",
+    "javascript",
+    "html.handlebars",
+    "ejs",
+    "pug"
+  ],
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "prettier.singleQuote": false, // default: false
+  "prettier.formatterPriority": 1, // default 1 - 1 === Enabled, -1 === Disabled
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.refreshOnInsertMode": true,
+  "coc.preferences.useQuickfixForLocations": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.floatConfig": {
+    "border": true,
+    "borderhighlight": "FloatBorder",
+    "highlight": "Normal",
+    "maxWidth": 120,
+    "focusable": false
+  },
+  "diagnostic.signPriority": 20,
+  "diagnostic.enableHighlightLineNumber": false
+}

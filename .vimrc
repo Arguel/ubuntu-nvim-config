@@ -62,9 +62,12 @@ Plug 'christoomey/vim-tmux-navigator'
 " https://github.com/tpope/vim-commentary
 Plug 'tpope/vim-commentary'
 
-" Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
-" https://github.com/Raimondi/delimitMate
-Plug 'Raimondi/delimitMate'
+" Insert or delete brackets, parens, quotes in pair.
+" https://github.com/jiangmiao/auto-pairs
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'KabbAmine/vCoolor.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Smooth scrolling neovim plugin written in lua
 " https://github.com/karb94/neoscroll.nvim
@@ -85,16 +88,16 @@ Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " If you have nodejs and yarn
 " :call mkdp#util#install()
  
-" 
-" 
+" Embed Neovim in Chrome, Firefox, Thunderbird & others.
+" https://github.com/glacambre/firenvim
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " very simple vim plugin for easy resizing of your vim windows
 " https://github.com/simeji/winresizer
 Plug 'simeji/winresizer'
 
-" 
-" 
+" Neovim motions on speed!
+" https://github.com/phaazon/hop.nvim
 Plug 'phaazon/hop.nvim'
 
 " Hlsearch Lens for Neovim
@@ -105,8 +108,9 @@ Plug 'kevinhwang91/nvim-hlslens'
 " https://github.com/mg979/vim-visual-multi
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-"
-"
+" A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+" https://github.com/nvim-lualine/lualine.nvim
+" https://github.com/kyazdani42/nvim-web-devicons
 Plug 'nvim-lualine/lualine.nvim'
 " If you want to have icons in your statusline choose one of these
 Plug 'kyazdani42/nvim-web-devicons'
@@ -174,29 +178,30 @@ Plug 'vuciv/vim-bujo'
 " https://github.com/liuchengxu/vista.vim
 " Plug ''
 
-" 
-" 
-" Plug ''
+" Add spelling errors to the quickfix list (vim-ingo-library is a dependency).
+" https://github.com/inkarkat/vim-SpellCheck
+" https://github.com/inkarkat/vim-ingo-library
+Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-SpellCheck'
 
-" 
-" 
-" Plug ''
+" Repeat.vim: enable repeating supported plugin maps with '.'
+" https://github.com/tpope/vim-repeat 
+Plug 'tpope/vim-repeat'
 
-" 
-" 
-" Plug ''
+" Repeat command extended to visual mode. 
+" https://github.com/inkarkat/vim-visualrepeat
+Plug 'inkarkat/vim-visualrepeat'
+nnoremap <silent> <Plug>(MyPluginVisual)
+\ :<C-u>execute 'normal!' visualrepeat#reapply#VisualMode(0)<Bar>
+\call MyPlugin#Operator('visual', "\<lt>Plug>(MyPluginVisual)")<CR>
 
-" 
-" 
-" Plug ''
+" Live grep with args
+" https://github.com/nvim-telescope/telescope-live-grep-args.nvim 
+Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 
-" 
-" 
-" Plug ''
-
-" 
-" 
-" Plug ''
+Plug 'mfussenegger/nvim-dap'
+" Plug 'rcarriga/nvim-dap-ui'
+Plug 'nvim-telescope/telescope-dap.nvim'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " 
 " 
@@ -209,36 +214,39 @@ call plug#end()
 " The explanations may be wrong, it is better to search the wiki
 
 
-set nocompatible		        " Placeholder
-set relativenumber 		      " So that the 'set number' numbers follow us (this helps in keyboard shortcuts)
-set number			            " It will put numbers in the left margin
-set mouse=a 			          " It allows us to interact with the mouse within Vim (nvim-gt)
-set numberwidth=1 		      " To define the width of 'set number'
-set clipboard=unnamedplus	  " So you can use the copied text in vim on your OS
-syntax on 			            " For a color highlight for commands
-set showcmd			            " To show us what command we use
-set ruler 			            " To indicate our position in the text
-set encoding=UTF-8		      " (Default in neovim)
-set showmatch			          " To show us the other parenthesis that closes it
-set shiftwidth=2		        " Indentation distance using '>>' or '<<'
-set laststatus=2		        " To show the bottom menu of neovim in vim
-set noshowmode			        " So that it does not show us in which mode we are currently working
-set smarttab			          " Affects how <TAB> key presses are interpreted depending on where the cursor is
-set cindent			            " To auto-indent spaces with C
-set tabstop=2			          " Changes the width of the TAB character, plain and simple.
-set expandtab			          " Always uses spaces instead of tab characters
-set updatetime=100		      " Delay before vim writes its swap file (useful for vim-gitgutter and coc, it can cause lag, the default is 4000)
-filetype off                " Fixes a bug with filetype
-filetype plugin on		      " Complex answer, search in the wiki
-set signcolumn=yes		      " Always show signcolumns	(coc plugin and gitgutter)
+set nocompatible		            " Placeholder
+set relativenumber 		          " So that the 'set number' numbers follow us (this helps in keyboard shortcuts)
+set number			                " It will put numbers in the left margin
+set mouse=a 			              " It allows us to interact with the mouse within Vim (nvim-gt)
+set numberwidth=1 		          " To define the width of 'set number'
+set clipboard=unnamedplus	      " So you can use the copied text in vim on your OS
+syntax on 			                " For a color highlight for commands
+set showcmd			                " To show us what command we use
+set ruler 			                " To indicate our position in the text
+set encoding=UTF-8		          " (Default in neovim)
+set showmatch			              " To show us the other parenthesis that closes it
+set shiftwidth=2		            " Indentation distance using '>>' or '<<'
+set laststatus=2		            " To show the bottom menu of neovim in vim
+set noshowmode			            " So that it does not show us in which mode we are currently working
+set smarttab			              " Affects how <TAB> key presses are interpreted depending on where the cursor is
+set cindent			                " To auto-indent spaces with C
+set tabstop=2			              " Changes the width of the TAB character, plain and simple.
+set expandtab			              " Always uses spaces instead of tab characters
+set updatetime=100		          " Delay before vim writes its swap file (useful for vim-gitgutter and coc, it can cause lag, the default is 4000)
+filetype off                    " Fixes a bug with filetype
+filetype plugin on		          " Complex answer, search in the wiki
+set signcolumn=yes		          " Always show signcolumns	(coc plugin and gitgutter)
 set completeopt=longest,menuone " To show us the longest match Coc-nvim
+set nospell                     " To disable spell checking
 
-set hidden			            " TextEdit might fail if hidden is not set.	(coc plugin)
-set nobackup        		  	" Some servers have issues with backup files, see #649.	(coc plugin)
-set nowritebackup		        " Same as above	(coc plugin)
-set cmdheight=2			        " Give more space for displaying messages.	(coc plugin)
-set shortmess+=c		        " Don't give |ins-completion-menu| messages.	(coc plugin)
-set conceallevel=2          " For vim-markdown
+set hidden			                " TextEdit might fail if hidden is not set.	(coc plugin)
+set nobackup        		  	    " Some servers have issues with backup files, see #649.	(coc plugin)
+set nowritebackup		            " Same as above	(coc plugin)
+set cmdheight=2			            " Give more space for displaying messages.	(coc plugin)
+set shortmess+=c		            " Don't give |ins-completion-menu| messages.	(coc plugin)
+set conceallevel=2              " For vim-markdown
+" Enables cursor line position tracking:
+set cursorline
 
 " Enable persistent undo so that undo history persists across vim sessions
 " *VIM-UNDO-PLUGIN
@@ -470,6 +478,46 @@ augroup FILETYPES
   autocmd FileType markdown let b:indentLine_enabled = 0
 augroup END
 
+" ###################-----	Firenvim
+if exists('g:started_by_firenvim') && g:started_by_firenvim
+  " general config for firenvim
+  let g:firenvim_config = {
+      \ 'globalSettings': {
+          \ 'alt': 'all',
+      \  },
+      \ 'localSettings': {
+          \ 'notion.so': {
+            \ 'selector': '',
+            \ },
+          \ '.*': {
+              \ 'cmdline': 'neovim',
+              \ 'priority': 0,
+              \ 'selector': 'textarea',
+              \ 'takeover': 'never',
+          \ },
+      \ }
+  \ }
+
+  augroup firenvim
+    autocmd!
+    autocmd BufEnter *.txt setlocal filetype=markdown laststatus=0 nonumber noshowcmd noruler showtabline=1
+  augroup END
+endif
+
+" ###################-----	placeholder
+
+" ###################-----	placeholder
+
+" ###################-----	placeholder
+
+" ###################-----	placeholder
+
+" ###################-----	placeholder
+
+" ###################-----	placeholder
+
+" ###################-----	placeholder
+
 " ###################-----	placeholder
 
 " ###################-----	Others
@@ -545,19 +593,16 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+inoremap <script><buffer><silent><expr> <c-cr>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ ""
 
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -592,21 +637,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
@@ -618,10 +648,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 
 " Mappings for CoCList
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>x  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
@@ -653,7 +679,7 @@ inoremap <expr><C-n> pumvisible() ? "\<C-p>" : "\<C-h>"
 nnoremap <Leader>coc :CocList marketplace<CR>
 
 " to review errors flagged by coc
-nnoremap <Leader>err :CocDiagnostics<CR>
+nnoremap <Leader>er :CocDiagnostics<CR>
 
 
 " ###################-----	Vim-prettier
@@ -661,7 +687,7 @@ vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 " ###################-----	Emmet-vim
-let g:user_emmet_leader_key='<C-x>'
+let g:user_emmet_leader_key='<C-y>'
 
 " ###################-----	Blamer.nvim
 " activate inline git blame (allows you to see the commits on the line that the cursor is on)
@@ -684,26 +710,26 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " ###################----- Hop	
 " hop around by highlighting words.
-nnoremap <C-h>w :HopWord<CR>
+nnoremap <C-m>w :HopWord<CR>
 " hop around by matching against a pattern (as with /).
-nnoremap <C-h>p :HopPattern<CR>
+nnoremap <C-m>p :HopPattern<CR>
 " type a single key and hop to any occurrence of that key in the document.
-nnoremap <C-h>c :HopChar1<CR>
+nnoremap <C-m>c :HopChar1<CR>
 " type a bigram (two keys) and hop to any occurrence of that bigram in the document.
-nnoremap <C-h>t :HopChar2<CR> 
+nnoremap <C-m>t :HopChar2<CR> 
 " jump to any visible line in your buffer.
-nnoremap <C-h>l :HopLine<CR>
-" jump to any visible first non-whitespace character of each line in your buffer.
-nnoremap <C-h>s :HopLineStart<CR>
+nnoremap <C-m>l :HopLine<CR>
+" jump to any visible first non-whitespacekcharacter of each line in your buffer.
+nnoremap <C-m>s :HopLineStart<CR>
 
 " ###################-----	Vim-bujo
 nmap <Leader>tu <Plug>BujoChecknormal
 nmap <Leader>th <Plug>BujoAddnormal
 
 " ###################-----	UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-t>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-t>"
 
 " ###################-----	placeholder
 
@@ -717,7 +743,7 @@ nmap <Leader>q :q<CR>
 " [space + q + q] quit file (use with care)
 nmap <Leader>qq :q!<CR>
 " [space + shift + r] quit all buffers
-map <Leader>R :qa<CR>
+map <Leader>T :qa<CR>
 " [space + shift + q + q] quit and save all buffers
 nmap <Leader>QQ :xa<CR>
 
@@ -772,8 +798,11 @@ nmap <Leader>5 :CocRestart<CR>
 
 " --- Personal maps ---
 
-" restart vim config and install plugins
-nmap <Leader>res :so ~/.vimrc<CR>
+" Edit Vim config file in a new tab.
+nmap <Leader>ev :tabnew $vimrcpath<CR>
+
+" Source Vim config file.
+nmap <Leader>sv :source $vimrcpath<CR>
 
 " Behave Vim
 nnoremap Y y$
@@ -788,7 +817,7 @@ inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
-inoremap <cr> <cr><c-g>u
+" inoremap <cr> <cr><c-g>u
 
 " Jumplist mutations
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
@@ -805,3 +834,92 @@ nnoremap <leader>k :m .-2<CR>==
 
 nnoremap <leader>lv :AsyncRun -mode=term -pos=tab live-server<CR>
 
+" Spell checking
+nnoremap <F6> :setlocal spell! spelllang=en_us<CR>
+nnoremap <F7> :set spelllang=es<CR>
+
+nnoremap <C-K> :cnext<CR>zz
+nnoremap <C-J> :cprev<CR>zz
+nnoremap <M-k> :lnext<CR>zz
+nnoremap <M-j> :lprev<CR>zz
+nnoremap <C-q> :call ToggleQFList(1)<CR>
+nnoremap <C-w> :call ToggleQFList(0)<CR>
+
+let g:quickFixLocal = 0
+let g:quickFixGlobal = 0
+
+fun! ToggleQFList(global)
+    if a:global
+        if g:quickFixGlobal == 1
+            let g:quickFixGlobal = 0
+            cclose
+        else
+            let g:quickFixGlobal = 1
+            copen
+        end
+    else
+        if g:quickFixLocal == 1
+            let g:quickFixLocal = 0
+            lclose
+        else
+            let g:quickFixLocal = 1
+            lopen
+        end
+    endif
+endfun
+
+
+" Cycle through splits.
+nnoremap <S-Tab> <C-w>w
+
+" Press * to search for the term under the cursor or a visual selection and
+" then press a key below to replace all instances of it in the current file.
+nnoremap <Leader>r :%s///g<Left><Left>
+nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+
+" The same as above but instead of acting on the whole file it will be
+" restricted to the previously visually selected range. You can do that by
+" pressing *, visually selecting the range you want it to apply to and then
+" press a key below to replace all instances of it in the current selection.
+xnoremap <Leader>r :s///g<Left><Left>
+xnoremap <Leader>rc :s///gc<Left><Left><Left>
+
+" Format paragraph (selected or not) to 80 character lines.
+nnoremap <Leader>g gqap
+xnoremap <Leader>g gqa
+
+" Prevent x and the delete key from overriding what's in the clipboard.
+noremap x "_x
+noremap X "_x
+noremap <Del> "_x
+
+" Prevent selecting and pasting from overwriting what you originally copied.
+xnoremap p pgvy
+
+" Keep cursor at the bottom of the visual selection after you yank it.
+vmap y ygv<Esc>
+
+" After searching for text, press this mapping to do a project wide find and
+" replace. It's similar to <leader>r except this one applies to all matches
+" across all files instead of just the current file.
+nnoremap <Leader>R
+  \ :cfdo %s//g \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
