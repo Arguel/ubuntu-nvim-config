@@ -336,23 +336,6 @@ $ git clone https://github.com/liuchengxu/vista.vim.git --depth=1 ~/.local/share
 
 [https://github.com/liuchengxu/vista.vim#requirement](https://github.com/liuchengxu/vista.vim#requirement)
 
-## copilot.vim
-
-1.  Install [Node.js][] 12 or newer.
-2.  Install [Neovim][] 0.6 or newer.
-3.  Install `github/copilot.vim` using vim-plug, packer.nvim, or any other
-    plugin manager. Or to install directly:
-
-        git clone https://github.com/github/copilot.vim.git \
-         ~/.config/nvim/pack/github/start/copilot.vim
-
-4.  Start Neovim and invoke `:Copilot setup`.
-
-[node.js]: https://nodejs.org/en/download/
-[neovim]: https://github.com/neovim/neovim/releases/latest
-
-[https://github.com/github/copilot.vim#getting-started](https://github.com/github/copilot.vim#getting-started)
-
 # 🚀 Keyboard shortcuts
 
 I moved the keyboard shortcuts section to a separate file, because it's a lot of
