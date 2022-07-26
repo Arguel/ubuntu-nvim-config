@@ -349,7 +349,7 @@ keyboard shortcuts, so you can use that configuration without any problem
 
 # ⭐ Special mentions
 
-- Using ultisnips and CoC when you complete a snippet you can use the 'tab' key
+- Using ultisnips and CoC when you complete a snippet you can use the '<C-j>' key
   to jump to the next field to complete
 
 - `:diffget` and `:diffput` can be abbreviated as `do` and `dp` respectively
@@ -385,3 +385,4 @@ command (as I mentioned above it is better to restart before executing it)
 - [benawad](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f)
 - [joshldavis](https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/#:~:text=Summary%3A%20A%20buffer%20is%20the,just%20a%20collection%20of%20windows.)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
+- [David-Kunz](https://github.com/David-Kunz/vim)
