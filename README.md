@@ -18,29 +18,6 @@ information already comes from my [old configuration in windows](https://github.
 
 # ⚡️ Requirements
 
-## Optional
-
-- Additional autocompletion/setup for python with the following modules
-  (you need to have [Python](https://www.python.org/downloads/) installed):
-
-```sh
-pip3 install pynvim
-pip3 install neovim
-
-pip3 install -U setuptools
-
-pip3 install python-language-server
-pip3 install 'python-language-server[all]'
-
-pip3 install git+git://github.com/psf/black
-
-pip3 install pyls-mypy
-pip3 install pyls-isort
-pip3 install pyls-black
-```
-
-## Necessary
-
 - Have [vim](https://www.vim.org/) and [nvim](https://neovim.io/) installed
 - A plugin manager (I personally use
   [Vim-Plug](https://github.com/junegunn/vim-plug)), but you can safely use any
@@ -59,6 +36,26 @@ pip3 install pyls-black
 - Once you have a plugin manager you will have to install the plugins that are
   in ".vimrc", in case of using vim-plug, you only have to put this command in
   the console and you should install them `:PlugInstall`
+  
+- To use the plugins you will also need:
+  - [node](https://nodejs.org/en/) or [nvm](https://github.com/nvm-sh/nvm#install--update-script)
+  - [python](https://www.python.org/downloads/)<br>
+    Additionally you can improve the autocomplete for python by installing the following packages
+    ```sh
+    pip3 install pynvim
+    pip3 install neovim
+
+    pip3 install -U setuptools
+
+    pip3 install python-language-server
+    pip3 install 'python-language-server[all]'
+
+    pip3 install git+git://github.com/psf/black
+
+    pip3 install pyls-mypy
+    pip3 install pyls-isort
+    pip3 install pyls-black
+    ```
 
 # ⚙️ Configuration
 
